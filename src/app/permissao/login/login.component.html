@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="container-image">
+        <img src="https://picsum.photos/1920/1080" alt="imagem teste">
+    </div>
+    <div class="container-form">
+        <span>
+            Efetuar Login
+        </span>
+        <form [formGroup]="formulario">
+            <mat-form-field [appearance]="'outline'">
+                <mat-label>Usuário</mat-label>
+                <input type="text" matInput placeholder="Usuário" formControlName="Usuario" />
+                @if (f.Usuario.hasError('required')) { <mat-error> Campo obrigátorio </mat-error>  }  
+            </mat-form-field>
+
+            <mat-form-field [appearance]="'outline'">
+                <mat-label>Senha</mat-label>
+                <input type="password" matInput placeholder="Senha" formControlName="Senha" />
+                @if (f.Senha.hasError('required')) { <mat-error> Campo obrigátorio </mat-error>  }
+            </mat-form-field>
+        </form>
+        <div class="container-buttons">
+            <button
+                mat-raised-button
+                color="primary"
+                [disabled]="formulario.invalid"
+                (click)="salvar()"
+            >Entrar</button>
+            <a href="#" mat-flat-button>Registrar</a>
+        </div>
+    </div>
+</div>
