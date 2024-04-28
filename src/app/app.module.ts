@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './permissao/login/login.component';
@@ -31,7 +32,8 @@ import { ContatosComponent } from './contantos/contatos.component';
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
-    RouterModule
+    MatIconModule,
+    RouterModule,
   ],
   providers: [
     provideClientHydration(),
