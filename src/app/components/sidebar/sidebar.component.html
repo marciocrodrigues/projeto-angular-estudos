@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="container-logo">
+    <img src="assets/img/logo.svg" alt="">
+  </div>
+  <div class="container-menu">
+    <ul>
+      <li>
+        <a
+          [routerLink]="['/home']"
+          [routerLinkActive]="'link-ativo'"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['/home/contatos']"
+          [routerLinkActive]="'link-ativo'"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <mat-icon>contacts</mat-icon>
+          <span>Contatos</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

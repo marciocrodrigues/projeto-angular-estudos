@@ -3,41 +3,87 @@
         <div class="container-form">
             <div class="container-form-header">
                 <div class="container-header-logo">
-                    <img src="assets/img/logo.jpg" alt="logo">
+                    <img src="assets/img/logo.svg" alt="logo">
                 </div>
                 <div class="container-header-cadastrar">
-                    <button class="botao-cadastro">
-                        Cadastrar-se
+                    <button class="botao-cadastro" (click)="alterarLoginCadastro()">
+                        {{ cadastro ? 'Entrar' : 'Cadastrar-se' }}
                     </button>          
                 </div>
             </div>
-            <form [formGroup]="formulario">
-                <span>
-                    Efetuar Login
-                </span>
-                <div class="input-group">
-                    <mat-label>Usuário</mat-label>
-                    <input class="input-login" type="text" matInput placeholder="Usuário" formControlName="Usuario" />
-                    @if (f.Usuario?.touched && f.Usuario.hasError('required')) { 
-                        <span class="input-msg-error"> Campo obrigátorio </span>  
-                    }  
+            @if (cadastro) {
+                <form [formGroup]="formularioCadastro">
+                    <div class="input-group">
+                        <mat-label>E-mail</mat-label>
+                        <input class="input-login" type="text" matInput placeholder="E-mail" formControlName="Email" />
+                        @if (fLogin.Email?.touched && fLogin.Email.hasError('required')) { 
+                            <span class="input-msg-error"> Campo obrigátorio </span>  
+                        }
+                        @if (fLogin.Email?.touched && fLogin.Email.hasError('email')) { 
+                            <span class="input-msg-error"> E-mail invalido </span>  
+                        }
+                    </div>
+                    <div class="input-group">
+                        <mat-label>Nome</mat-label>
+                        <input class="input-login" type="text" matInput placeholder="Preencha seu nome" formControlName="Nome" />
+                        @if (fLogin.Nome?.touched && fLogin.Nome?.hasError('required')) {
+                            <span class="input-msg-error"> Campo obrigátorio </span>
+                        }
+                    </div>
+                    <div class="input-group">
+                        <mat-label>Celular</mat-label>
+                        <input class="input-login" type="text" matInput placeholder="Preencha seu celular" formControlName="Celular" />
+                        @if (fLogin.Celular?.touched && fLogin.Celular?.hasError('required')) {
+                            <span class="input-msg-error"> Campo obrigátorio </span>
+                        }
+                    </div>
+                    <div class="input-group">
+                        <mat-label>Senha</mat-label>
+                        <input class="input-login" type="password" matInput placeholder="Senha" formControlName="Senha" />
+                        @if (fLogin.Senha?.touched && fLogin.Senha?.hasError('required')) {
+                            <span class="input-msg-error"> Campo obrigátorio </span>
+                        }
+                    </div>
+                    <div class="container-buttons">
+                        <button
+                            class="botao-salvar"
+                            [disabled]="formularioCadastro.invalid"
+                            (click)="salvar()"
+                        >Entrar</button>
+                    </div>
+                </form>
+            } @else {
+                <form [formGroup]="formularioLogin">
+                    <span>
+                        Efetuar Login
+                    </span>
+                    <div class="input-group">
+                        <mat-label>E-mail</mat-label>
+                        <input class="input-login" type="text" matInput placeholder="E-mail" formControlName="Email" />
+                        @if (fLogin.Email?.touched && fLogin.Email.hasError('required')) { 
+                            <span class="input-msg-error"> Campo obrigátorio </span>  
+                        }
+                        @if (fLogin.Email?.touched && fLogin.Email.hasError('email')) { 
+                            <span class="input-msg-error"> E-mail invalido </span>  
+                        }
+                    </div>
+        
+                    <div class="input-group">
+                        <mat-label>Senha</mat-label>
+                        <input class="input-login" type="password" matInput placeholder="Senha" formControlName="Senha" />
+                        @if (fLogin.Senha?.touched && fLogin.Senha?.hasError('required')) {
+                            <span class="input-msg-error"> Campo obrigátorio </span>
+                        }
+                    </div>
+                </form>
+                <div class="container-buttons">
+                    <button
+                        class="botao-salvar"
+                        [disabled]="formularioLogin.invalid"
+                        (click)="salvar()"
+                    >Entrar</button>
                 </div>
-    
-                <div class="input-group">
-                    <mat-label>Senha</mat-label>
-                    <input class="input-login" type="password" matInput placeholder="Senha" formControlName="Senha" />
-                    @if (f.Senha?.touched && f.Senha?.hasError('required')) {
-                        <span class="input-msg-error"> Campo obrigátorio </span>
-                    }
-                </div>
-            </form>
-            <div class="container-buttons">
-                <button
-                    class="botao-salvar"
-                    [disabled]="formulario.invalid"
-                    (click)="salvar()"
-                >Entrar</button>
-            </div>
+            }
         </div>
     </div>
     <div class="container-image">

@@ -1,0 +1,53 @@
+@import '../../styles/components.scss';
+
+.container {
+  box-sizing: border-box;
+  width: 16.25rem;
+  height: 100vh;
+  background-color: $cor-branca;
+  color: $text-color-padrao;
+
+  .container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+  }
+
+  .container-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    ul {
+      width: 100%;
+      padding: 0;
+      li {
+        list-style: none;
+        width: 100%;
+        padding: 0;
+        
+        a {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 1rem 1rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 1rem;
+          text-decoration: none;
+          color: $text-color-padrao;
+          font-size: $font-regular;
+          font-weight: 700;
+        }
+
+        .link-ativo {
+          background: $cor-azul-claro;
+          border-left: $cor-azul-primario 5px solid;
+          color: $cor-azul-primario;
+        }
+      }
+    }
+  }
+}

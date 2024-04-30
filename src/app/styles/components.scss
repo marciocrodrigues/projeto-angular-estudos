@@ -1,4 +1,6 @@
 $cor-branca: #FFFFFF;
+$cor-background: #F8F9FD;
+$cor-azul-claro: #F2F7FF;
 $cor-azul-primario: #14ADD6;
 $cor-azul-secundario: #384295;
 $cor-cinza-40: #D9D9D9;
@@ -6,9 +8,12 @@ $cor-cinza-50: #D0D0D0;
 $cor-error: #ff0000;
 
 $fonte-pequena: 12px;
+$font-regular: 14px;
 $fonte-padrao: 16px;
 $fonte-subtitulo: 20px;
 $fonte-titulo: 26px;
+
+$text-color-padrao: #262626;
 
 @mixin botao($color, $width, $height, $background) {
   all: unset;

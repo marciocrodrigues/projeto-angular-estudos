@@ -1,0 +1,21 @@
+@import '../../styles/components.scss';
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  background: $cor-background;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .container-dia-hoje {
+    display: flex;
+    flex-direction: column;
+    color: $text-color-padrao;
+
+    span:nth-child(1) {
+      font-weight: 700;
+    }
+  }
+}
