@@ -1,0 +1,57 @@
+@import "../styles/components.scss";
+
+.container {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+
+    mat-card {
+        width: 100%;
+        height: 100%;
+
+        mat-card-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .container-buscar {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                .container-filtros {
+                    display: flex;
+                    align-items: flex-end;
+                    gap: 10px;
+
+                    .container-button {
+                        display: flex;
+                        align-items: flex-end;
+                    }
+                }
+                
+                @media (max-width: 745px) {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .container-filtros {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        .container-button {
+                            display: flex;
+                            width: 100%;
+                        }
+                    }
+
+                    .container-novo {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -15,9 +15,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-import { ContatosComponent } from './contantos/contatos.component';
+import { ContatosComponent } from './contatos/contatos.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FormularioContatosComponent } from './contatos/formulario-contatos/formulario-contatos.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     ContatosComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormularioContatosComponent,
   ],
   imports: [
     BrowserModule,

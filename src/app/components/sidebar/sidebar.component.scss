@@ -7,6 +7,10 @@
   background-color: $cor-branca;
   color: $text-color-padrao;
 
+  @media (max-width: 745px) {
+    width: 6rem;
+  }
+
   .container-logo {
     display: flex;
     justify-content: center;
@@ -40,6 +44,14 @@
           color: $text-color-padrao;
           font-size: $font-regular;
           font-weight: 700;
+
+          @media (max-width: 745px) {
+            justify-content: center;
+
+            span {
+              display: none;
+            }
+          }
         }
 
         .link-ativo {

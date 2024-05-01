@@ -17,5 +17,11 @@
             height: calc(100% - 80px);
             width: 100%;
         }
+
+        @media (max-width: 745px) {
+            app-header {
+                display: none;
+            }
+        }
     }
 }

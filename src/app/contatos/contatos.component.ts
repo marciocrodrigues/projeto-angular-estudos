@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contatos',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './contatos.component.scss'
 })
 export class ContatosComponent {
-
+  constructor(
+    private readonly router: Router
+  ) {}
 }

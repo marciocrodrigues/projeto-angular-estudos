@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
 
       const params = this.formularioLogin.getRawValue() as LoginModel;
       this.loginService.efetuarLogin(params);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     }
   }
 }

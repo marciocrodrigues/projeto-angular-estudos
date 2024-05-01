@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <span>Contatos</span>
+            </mat-card-title>
+            <div class="container-buscar">
+                <div class="container-filtros">
+                    <div class="input-group">
+                        <label>Buscar contato</label>
+                        <input class="input-buscar" type="text">
+                    </div>
+                    <div class="container-button">
+                        <button class="botao-buscar">
+                            <mat-icon>search</mat-icon>
+                            <span>Buscar</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="container-novo">
+                    <a [routerLink]="['/contatos/novo']" class="botao-novo">
+                        <mat-icon>add</mat-icon>
+                        <span>Novo cadastro</span>
+                    </a>
+                </div>
+            </div>
+        </mat-card-header>
+    </mat-card>
+</div>
